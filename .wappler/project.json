@@ -26,7 +26,8 @@
   ],
   "projectType": "app",
   "cordova": {
-    "platform": ""
+    "platform": "browser 6.0.0",
+    "target": ""
   },
   "appFile": "/js/app.js"
 }
