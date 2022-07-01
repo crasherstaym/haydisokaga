@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+	<link rel="stylesheet" href="Framework7/5/css/framework7.bundle.min.css" />
+	<script src="cordova.js"></script>
+	<script src="Framework7/5/js/framework7.bundle.min.js"></script>
+	<script src="js/routes.js"></script>
+	<script src="dmxAppConnect/dmxFramework7/dmxFramework7.js"></script>
+	<link rel="stylesheet" href="dmxFramework7_icons/css/framework7-icons.css" />
+
+</head>
+
+<body is="dmx-app" id="index">
+	<div id="app" is="dmx-f7-app">
+		<!-- Statusbar overlay -->
+		<div class="statusbar"></div>
+
+		<!-- Your main view, should have "view-main" class -->
+		<div id="main" class="view view-main">
+			<!-- Initial Page, "data-name" contains page name -->
+			<div id="index" class="page" data-name="index">
+
+				<!-- Top Navbar -->
+				<div class="navbar">
+					<div class="navbar-bg"></div>
+					<div class="navbar-inner">
+						<div class="title sliding">Awesome App</div>
+					</div>
+				</div>
+
+				<!-- Toolbar -->
+				<div class="toolbar toolbar-bottom">
+					<div class="toolbar-inner">
+						<a href="#" class="link">Hello</a>
+						<a href="#" class="link">World</a>
+					</div>
+				</div>
+
+				<!-- Scrollable page content -->
+				<div class="page-content wappler-block">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
