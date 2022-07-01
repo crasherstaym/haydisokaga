@@ -29,5 +29,6 @@
     "platform": "browser 6.0.0",
     "target": ""
   },
-  "appFile": "/js/app.js"
+  "appFile": "/js/app.js",
+  "activeGitRemote": "origin"
 }
