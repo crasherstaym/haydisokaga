@@ -17,7 +17,7 @@
 	<script src="cordova.js"></script>
 	<script src="Framework7/5/js/framework7.bundle.min.js"></script>
 	<script src="js/routes.js"></script>
-	<script src="dmxAppConnect/dmxFramework7/dmxFramework7.js"></script>
+	<script src="dmxAppConnect/dmxFramework7/dmxFramework7.js" defer=""></script>
 	<link rel="stylesheet" href="dmxFramework7_icons/css/framework7-icons.css" />
 
 </head>
@@ -31,6 +31,44 @@
 		<div id="main" class="view view-main">
 			<!-- Initial Page, "data-name" contains page name -->
 			<div id="index" class="page" data-name="index">
+				<div class="login-screen modal-in" id="login1">
+					<div id="login1_page" data-name="login1_page" class="page login-screen-page">
+						<div class="page-content login-screen-content">
+							<div class="login-screen-title">My App</div>
+							<form>
+								<div class="list">
+									<ul>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Username</div>
+												<div class="item-input">
+													<input type="text" name="username" placeholder="Username">
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Password</div>
+												<div class="item-input">
+													<input type="password" name="password" placeholder="Password">
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="list">
+									<ul>
+										<li><a href="#" class="item-link list-button">Sign In</a></li>
+									</ul>
+									<div class="block-footer">
+										<p>Some text about login information.</p>
+										<p><a href="#" class="login-screen-close">Close Login Screen</a></p>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 
 				<!-- Top Navbar -->
 				<div class="navbar">
