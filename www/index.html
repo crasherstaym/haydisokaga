@@ -20,10 +20,30 @@
 	<script src="dmxAppConnect/dmxFramework7/dmxFramework7.js" defer=""></script>
 	<link rel="stylesheet" href="dmxFramework7_icons/css/framework7-icons.css" />
 
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="dmxAppConnect/dmxAnimateCSS/animate.min.css" />
+	<script src="dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer=""></script>
+	<script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+	<script src="dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
 </head>
 
 <body is="dmx-app" id="index">
-	<div id="app" is="dmx-f7-app">
+	<div id="app" is="dmx-f7-app" auto-dark-theme="true">
+		<script is="dmx-flow" id="flow1" type="text/dmx-flow">{
+  condition: {
+    if: "{{(main.index.login1.login1_page.f7form.username.value == 'admin')}}",
+    then: {
+      steps: {
+        run: {action: "{{main.index.login1.close(undefined)}}", name: "loginkapat"}
+      }
+    },
+    else: {
+      steps: {
+        f7.toast.show: {text: "Bilgilerinizi kontrol edin."}
+      }
+    }
+  }
+}</script>
 		<!-- Statusbar overlay -->
 		<div class="statusbar"></div>
 
@@ -31,16 +51,16 @@
 		<div id="main" class="view view-main">
 			<!-- Initial Page, "data-name" contains page name -->
 			<div id="index" class="page" data-name="index">
-				<div class="login-screen modal-in" id="login1">
-					<div id="login1_page" data-name="login1_page" class="page login-screen-page">
+				<div class="login-screen" id="login1">
+					<div id="login1_page" data-name="login1_page" class="page login-screen-page color-theme-green">
 						<div class="page-content login-screen-content">
-							<div class="login-screen-title">My App</div>
+							<div class="login-screen-title">Haydi Sokağa!</div>
 							<form>
 								<div class="list">
 									<ul>
 										<li class="item-content item-input">
 											<div class="item-inner">
-												<div class="item-title item-label">Username</div>
+												<div class="item-title item-label">Kullanıcı Adı</div>
 												<div class="item-input">
 													<input type="text" name="username" placeholder="Username">
 												</div>
@@ -48,7 +68,7 @@
 										</li>
 										<li class="item-content item-input">
 											<div class="item-inner">
-												<div class="item-title item-label">Password</div>
+												<div class="item-title item-label">Şifre</div>
 												<div class="item-input">
 													<input type="password" name="password" placeholder="Password">
 												</div>
@@ -58,11 +78,13 @@
 								</div>
 								<div class="list">
 									<ul>
-										<li><a href="#" class="item-link list-button">Sign In</a></li>
+										<li><a href="#" class="item-link list-button" dmx-on:click="flow1.run()">Giriş Yap</a></li>
 									</ul>
 									<div class="block-footer">
-										<p>Some text about login information.</p>
-										<p><a href="#" class="login-screen-close">Close Login Screen</a></p>
+										<p>Üye değil misiniz?</p>
+										<p><a href="#" class="">Kayıt Ol</a>
+										<p class="text-color-lightblue" dmx-on:click="login1.close(undefined)">Giriş ekranını kapat</p>
+										</p>
 									</div>
 								</div>
 							</form>
@@ -74,20 +96,98 @@
 				<div class="navbar">
 					<div class="navbar-bg"></div>
 					<div class="navbar-inner">
-						<div class="title sliding">Awesome App</div>
+						<div class="title sliding">Haydi Sokağa</div>
 					</div>
 				</div>
 
 				<!-- Toolbar -->
 				<div class="toolbar toolbar-bottom">
 					<div class="toolbar-inner">
-						<a href="#" class="link">Hello</a>
-						<a href="#" class="link">World</a>
+						<a href="#" class="link"><i class="icon f7-icons">timelapse</i>Aktiviteler
+						</a>
+						<a class="link login-screen-open" data-login-screen="#login1"><i class="icon f7-icons">arrow_left_circle_fill</i>Giriş Yap
+						</a>
 					</div>
 				</div>
 
 				<!-- Scrollable page content -->
 				<div class="page-content wappler-block">
+					<div class="card card-expandable">
+						<div class="card-content">
+							<div class="bg-color-yellow exp-card" style="height: 300px">
+								<div class="card-header display-block card-shadowed">Piknik etkinliği<br />
+									<small style="opacity: 0.7">Keyifli Anlar</small>
+								</div>
+								<a href="#" class="link card-close card-opened-fade-in color-black" style="position: absolute; right: 15px; top: 15px">
+									<i class="icon f7-icons">xmark_circle_fill</i>
+								</a>
+							</div>
+							<div class="card-content-padding">
+								<p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web
+									apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps
+									tool to show working app prototype as soon as possible in case you need to.</p>
+								<p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android
+									(Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It
+									doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!
+								</p>
+								<p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to
+									bring the best experience and simplicity.</p>
+								<p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or
+									Capacitor) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+							</div>
+						</div>
+					</div>
+					<div class="card card-expandable">
+						<div class="card-content">
+							<div class="bg-color-yellow exp-card-konser" style="height: 300px">
+								<div class="card-header display-block card-shadowed">Konser etkinliği<br>
+									<small style="opacity: 0.7">Sınırsız Eğlence</small>
+								</div>
+								<a href="#" class="link card-close card-opened-fade-in color-black" style="position: absolute; right: 15px; top: 15px">
+									<i class="icon f7-icons">xmark_circle_fill</i>
+								</a>
+							</div>
+							<div class="card-content-padding">
+								<p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web
+									apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps
+									tool to show working app prototype as soon as possible in case you need to.</p>
+								<p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android
+									(Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It
+									doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!
+								</p>
+								<p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to
+									bring the best experience and simplicity.</p>
+								<p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or
+									Capacitor) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+							</div>
+						</div>
+					</div>
+					<div class="card card-expandable">
+						<div class="card-content">
+							<div class="bg-color-yellow exp-card" style="height: 300px">
+								<div class="card-header display-block card-shadowed">Piknik etkinliği<br>
+									<small style="opacity: 0.7">Keyifli Anlar</small>
+								</div>
+								<a href="#" class="link card-close card-opened-fade-in color-black" style="position: absolute; right: 15px; top: 15px">
+									<i class="icon f7-icons">xmark_circle_fill</i>
+								</a>
+							</div>
+							<div class="card-content-padding">
+								<p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web
+									apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps
+									tool to show working app prototype as soon as possible in case you need to.</p>
+								<p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android
+									(Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It
+									doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!
+								</p>
+								<p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to
+									bring the best experience and simplicity.</p>
+								<p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or
+									Capacitor) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,16 @@
+.exp-card {
+    background-image: url("https://cdn.yemek.com/mnresize/1250/833/uploads/2022/05/ahlatlibel-ataturk-park-ankara-piknik-alanlari-2.jpg");
+    background-position: center;
+    background-size: cover;
+   
+    
+}
+.exp-card-konser{
+  background-image: url("https://www.merkezefendi.bel.tr/Content/yuklemeler/haberler/WEMUU20-5-2022-21-WhatsAppImage2022-05-20at00.59.05(1).jpeg");
+   background-position: center;
+    background-size: cover;
+}
+.card-shadowed  {
+  color: white;
+ text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
