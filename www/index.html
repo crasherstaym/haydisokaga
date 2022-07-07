@@ -27,42 +27,9 @@
 	<script src="dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
 </head>
 
-<body is="dmx-app">
+<body is="dmx-app" id="haydisokaga">
 	<div id="app" is="dmx-f7-app" auto-dark-theme="true">
-		<div id="kayitEkrani" class="view">
-			<div class="page">
-
-
-
-				<div class="page-content"></div>
-
-
-			</div>
-		</div>
-
-
-
-
-
-		<script is="dmx-flow" id="flow1" type="text/dmx-flow">{
-  condition: {
-    if: "{{(main.index.login1.login1_page.f7form.username.value == 'admin')}}",
-    then: {
-      steps: {
-        run: {action: "{{main.index.login1.close(undefined)}}", name: "loginkapat"}
-      }
-    },
-    else: {
-      steps: {
-        f7.toast.show: {text: "Bilgilerinizi kontrol edin."}
-      }
-    }
-  }
-}</script>
-		<!-- Statusbar overlay -->
-		<div class="statusbar"></div>
-
-		<!-- Your main view, should have "view-main" class -->
+		<link rel="wappler-include" type="content-page" href="kayit.html" path="/kayit">
 		<div id="main" class="view view-main">
 			<!-- Initial Page, "data-name" contains page name -->
 			<div id="index" class="page" data-name="index">
@@ -70,14 +37,14 @@
 					<div id="login1_page" data-name="login1_page" class="page login-screen-page color-theme-green">
 						<div class="page-content login-screen-content">
 							<div class="login-screen-title">Haydi Sokağa!</div>
-							<form>
+							<form is="dmx-serverconnect-form" method="post" id="serverconnectform1">
 								<div class="list">
 									<ul>
 										<li class="item-content item-input">
 											<div class="item-inner">
 												<div class="item-title item-label">Kullanıcı Adı</div>
 												<div class="item-input">
-													<input type="text" name="username" placeholder="Username">
+													<input type="text" name="username" placeholder="Kullanıcı Adı">
 												</div>
 											</div>
 										</li>
@@ -85,7 +52,7 @@
 											<div class="item-inner">
 												<div class="item-title item-label">Şifre</div>
 												<div class="item-input">
-													<input type="password" name="password" placeholder="Password">
+													<input type="password" name="password" placeholder="Şifre">
 												</div>
 											</div>
 										</li>
@@ -96,9 +63,11 @@
 										<li><a href="#" class="item-link list-button" dmx-on:click="flow1.run()">Giriş Yap</a></li>
 									</ul>
 									<div class="block-footer">
+
+
+
 										<p>Üye değil misiniz?</p>
-										<p><a href="#" class="">Kayıt Ol</a>
-										<p class="text-color-lightblue" dmx-on:click="login1.close(undefined)">Giriş ekranını kapat</p>
+										<a href="/kayit" class="button">Kayıt Ol</a>
 										</p>
 									</div>
 								</div>
@@ -206,6 +175,16 @@
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+		<!-- Statusbar overlay -->
+		<div class="statusbar"></div>
+
+		<!-- Your main view, should have "view-main" class -->
+
 	</div>
 </body>
 
