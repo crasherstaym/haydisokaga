@@ -14,3 +14,13 @@
   color: white;
  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
+.style1 {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(black), to(white));
+    background-image: linear-gradient(0deg, black 0%, white 100%);
+   
+    
+}
+.loginpage {
+   
+    
+}
