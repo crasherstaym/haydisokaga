@@ -9,6 +9,10 @@ var routes = [
     "url": "./kayit.html"
   },
   {
+    "path": "/home",
+    "url": "./home.html"
+  },
+  {
     "path": "/kayit",
     "url": "kayit.html"
   }
